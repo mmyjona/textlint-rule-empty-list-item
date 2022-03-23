@@ -4,9 +4,6 @@ export default function (context, options = {}) {
     [Syntax.ListItem](node) {
       // "Str" node
       const text = getSource(node); // Get text
-
-      console.log("node text" + text);
-      console.log("node text len" + text.trim().length);
       const trimListText = text.replace("* ", "").replace("- ", "").replace(/\d+\./, "").trim();
       if (trimListText.length === 0) {
         const indexOfBugs = node.index;
